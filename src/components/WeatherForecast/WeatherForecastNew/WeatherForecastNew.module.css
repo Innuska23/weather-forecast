@@ -1,0 +1,12 @@
+.addTripContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.addButton{
+  text-align: center;
+  height: 150px;
+  width: 225px;
+  cursor: pointer;
+  display: block;
+}

@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 25px;
+  }
+  
+.bold {
+    font-weight: bold;
+}
+  

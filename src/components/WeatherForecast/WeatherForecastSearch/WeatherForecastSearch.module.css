@@ -1,0 +1,32 @@
+.form{
+    position: relative;
+}
+
+.searchWrapper{
+    margin-bottom: 25px;
+}
+
+.searchImg{
+    position: absolute;
+    width: 15px;
+    top: 3px;
+    left: 2px;
+}
+
+.input {
+    display: inline-block;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    outline-color: #455A64;
+    border: none;
+    background-color: #D3D3D3;
+    width: 200px; 
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline-color: #006DA4;
+    border: none; 
+}

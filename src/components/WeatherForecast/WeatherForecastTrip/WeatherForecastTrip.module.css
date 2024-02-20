@@ -1,0 +1,23 @@
+.weatherWrapper {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.weatherWrapper li {
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.weatherWrapper li img {
+  width: 30px;
+}
+
+.weatherText {
+  margin-bottom: 20px;
+}

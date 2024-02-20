@@ -1,0 +1,21 @@
+.cityContainer {
+    position: relative;
+
+}
+
+.list {    
+    position: absolute;
+    top: 30px;
+    background-color: white;
+    list-style-type: none;
+}
+
+.inputSelector {
+    display: flex;
+    /* flex-direction: column; */
+    width: 360px;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
