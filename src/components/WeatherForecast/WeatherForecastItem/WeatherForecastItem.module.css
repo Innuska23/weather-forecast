@@ -1,11 +1,15 @@
 .imageWrapper {
   height: 150px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .imageWrapper img {
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 
 .tripCard {

@@ -13,7 +13,7 @@ const WeatherForecastItem = ({ trip }) => {
   };
 
   return (
-    <li onClick={handleSelectTrip}>
+    <li className={s.itemList} onClick={handleSelectTrip}>
       <div className={s.imageWrapper}>
         <img src={trip.imageSrc} />
       </div>
