@@ -6,7 +6,8 @@ import { formatDate, getDateWithOffsetDay } from "../../../utils/date";
 
 const WeatherForecastModalForm = ({ onSubmit, formId }) => {
   const formRef = useRef();
-  const [startDate, setStartDate] = useState();
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const minDate = getDateWithOffsetDay(1);
   const maxDate = getDateWithOffsetDay(15);
 
@@ -25,6 +26,11 @@ const WeatherForecastModalForm = ({ onSubmit, formId }) => {
   const handleStartDateChange = (e) => {
     const newStartDate = e.target.value;
     setStartDate(newStartDate);
+  };
+
+  const handleEndDateChange = (e) => {
+    const newEndDate = e.target.value;
+    setEndDate(newEndDate);
   };
 
   return (
@@ -66,8 +72,10 @@ const WeatherForecastModalForm = ({ onSubmit, formId }) => {
             name="endDate"
             className={s.formInput}
             type="date"
+            value={endDate}
             min={formatDate(startDate || minDate)}
             max={formatDate(maxDate)}
+            onChange={handleEndDateChange}
             required
           />
         </div>

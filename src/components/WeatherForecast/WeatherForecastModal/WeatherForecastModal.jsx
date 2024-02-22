@@ -1,10 +1,12 @@
 import { useId } from "react";
-import WeatherForecastModalForm from "./WeatherForecastModalForm";
-import s from "./WeatherForecastModalForm.module.css";
+import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
+
+import WeatherForecastModalForm from "./WeatherForecastModalForm";
 import { addTrip } from "../../../redux/redusers/tripReducer";
 import { useLazyCityImagesQuery } from "../../../redux/api/imageApi";
-import { nanoid } from "@reduxjs/toolkit";
+import defaultImgSrc from "../../../assets/default.jpg";
+import s from "./WeatherForecastModalForm.module.css";
 
 function WeatherForecastModal({ onCloseModal }) {
   const formId = useId();
@@ -12,15 +14,23 @@ function WeatherForecastModal({ onCloseModal }) {
   const [getCityImages] = useLazyCityImagesQuery();
 
   const handleSaveTrip = async (data) => {
-    const cities = await getCityImages({
-      destination: data.destination,
-    }).unwrap();
+    let cityImageSrc;
+
+    try {
+      const cities = await getCityImages({
+        destination: data.destination,
+      }).unwrap();
+
+      cityImageSrc = cities?.results[0].links.download;
+    } catch (e) {
+      cityImageSrc = defaultImgSrc;
+    }
 
     dispatch(
       addTrip({
         ...data,
         id: nanoid(),
-        imageSrc: cities?.results[0].links.download,
+        imageSrc: cityImageSrc,
       })
     );
     onCloseModal();

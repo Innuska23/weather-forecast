@@ -1,5 +1,4 @@
 .wrapperModal {
-/* position: fixed; */
   position: fixed;
   top: 0;
   left: 0;
@@ -8,29 +7,24 @@
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
-
-/* top: 0;
-left: 0;
-width: 100vw;
-height: 100vh; */
-/* background-color: ; */
+  z-index: 1;
 }
 
-.wrapperContent{
+.wrapperContent {
   display: flex;
   flex-direction: column;
   margin-inline: auto;
   margin-top: 50px;
-  background-color: white;
+  background-color: var(--bg-white);
   gap: 25px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadow);
   width: 400px;
 }
 
 .wrapperHeader {
   font-weight: bold;
-  padding: 10px;  
-  border-bottom: 1px solid grey;
+  padding: 10px;
+  border-bottom: 1px solid var(--color-gray);
   display: flex;
   justify-content: space-between;
 }
@@ -41,34 +35,35 @@ height: 100vh; */
   cursor: pointer;
 }
 
-.wrapperButtons{
+.wrapperButtons {
   display: flex;
   gap: 10px;
   justify-content: end;
-  padding: 10px;  
-  border-top: 1px solid grey;
+  padding: 10px;
+  border-top: 1px solid var(--color-gray);
 }
 
-.wrapperForm{
-  padding: 10px;  
+.wrapperForm {
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px
+  gap: 10px;
 }
 
-.button{
+.button {
   cursor: pointer;
   padding: 5px;
-  background-color: white;
-  border: 1px solid gray;
+  background-color: var(--bg-white);
+  border: 1px solid var(--color-gray);
 }
 
 .button:focus {
-  background-color: #006DA4;;
-  color: white;
+  background-color: var(--color-blue);
+  color: var(--bg-white);
 }
-.button:hover{
- background-color: #006DA4;; 
+.button:hover {
+  background-color: var(--color-blue);
+  color: var(--bg-white);
 }
 
 .formGroup {
@@ -85,9 +80,9 @@ height: 100vh; */
 .formInput {
   margin: 0;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-input-border);
   border-radius: 4px;
-  color: gray;
+  color: var(--color-gray);
 }
 
 .formList {

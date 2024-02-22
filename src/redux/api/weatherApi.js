@@ -1,7 +1,6 @@
-// https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/[location]/[date1]/[date2]?
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const defaultParams = {
+const defaultWeatherParams = {
   unitGroup: "metric",
   include: "days",
   contentType: "json",
@@ -16,25 +15,20 @@ export const weatherAPI = createApi({
       query: ({ destination, startDate, endDate }) => {
         return {
           url: `timeline/${destination}/${startDate}/${endDate}`,
-          params: defaultParams,
+          params: defaultWeatherParams,
         };
       },
     }),
-    weatherForecast: build.query({
+    weatherForecastTodayByCity: build.query({
       query: ({ destination }) => {
         return {
-          url: `weatherdata/forecast`,
-          params: {
-            key: defaultParams.key,
-            iconSet: "icons1",
-            aggregateHours: 24,
-            contentType: "json",
-            locations: destination,
-          },
+          url: `timeline/${destination}/today`,
+          params: defaultWeatherParams,
         };
       },
     }),
   }),
 });
 
-export const { useWeatherListQuery, useWeatherForecastQuery } = weatherAPI;
+export const { useWeatherListQuery, useWeatherForecastTodayByCityQuery } =
+  weatherAPI;

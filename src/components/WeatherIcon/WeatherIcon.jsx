@@ -20,6 +20,7 @@ import ThunderShowersDay from "../../assets/weatherIcons/thunder-showers-day.svg
 import ThunderShowersNight from "../../assets/weatherIcons/thunder-showers-night.svg";
 import Thunder from "../../assets/weatherIcons/thunder.svg";
 import Wind from "../../assets/weatherIcons/wind.svg";
+import s from "./WeatherIcon.module.css";
 
 const weatherIcons = {
   ["clear-day"]: clearDay,
@@ -46,8 +47,14 @@ const weatherIcons = {
   ["wind"]: Wind,
 };
 
-const WeatherIcon = ({ weather }) => {
-  return <img src={weatherIcons[weather]} alt="" />;
+const WeatherIcon = ({ weather, className }) => {
+  return (
+    <img
+      className={`${s.weatherIcon} ${className ? className : ""}`}
+      src={weatherIcons[weather]}
+      alt=""
+    />
+  );
 };
 
 export default WeatherIcon;

@@ -3,18 +3,18 @@
   cursor: pointer;
 }
 
-
 .imageWrapper img {
   height: 100%;
+  width: 100%;
 }
 
-.tripCard{
-  border: 2px solid gray;
+.tripCard {
+  border: 2px solid var(--color-gray);
   padding: 10px;
   border-top: none;
 }
 
-.tripCardActive{
-  border: 2px solid #006DA4;
+.tripCardActive {
+  border: 2px solid var(--color-blue);
   border-top: none;
 }

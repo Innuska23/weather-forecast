@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+
 import { useLazyCityListQuery } from "../../redux/api/cityApi";
 import s from "./CitySelector.module.css";
 
@@ -7,7 +8,6 @@ const CitySelector = ({ onChange, value, ...rest }) => {
   const [getCities, { data }] = useLazyCityListQuery();
   const [destination, setDestination] = useState(value || "");
   const [showList, setShowList] = useState(false);
-  console.log("🚀 ~ CitySelector ~ showList:", showList);
 
   const handleSetCity = (destination) => () => {
     setDestination(destination);
@@ -46,8 +46,14 @@ const CitySelector = ({ onChange, value, ...rest }) => {
         <ul className={s.list}>
           {data?.map((option, index) => (
             <li key={index}>
-              <button onClick={handleSetCity(option?.primary?.text)}>
-                {option?.primary?.text} {option?.secondary?.text}
+              <button
+                className={s.button}
+                onClick={handleSetCity(option?.primary?.text)}
+              >
+                {option?.primary?.text}{" "}
+                <span className={s.secondaryCityValues}>
+                  {option?.secondary?.text}
+                </span>
               </button>
             </li>
           ))}

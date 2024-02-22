@@ -27,7 +27,6 @@ const WeatherForecastItem = ({ trip }) => {
         <div>
           {trip.startDate} - {trip.endDate}
         </div>
-        {/* <div>{trip.endDate}</div> */}
       </div>
     </li>
   );

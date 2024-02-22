@@ -1,0 +1,21 @@
+.counterList {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.counterListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.counterListItem span:first-child {
+  font-weight: bold;
+}
+
+.counterListItem span:last-child {
+  text-transform: uppercase;
+  font-size: 10px;
+}

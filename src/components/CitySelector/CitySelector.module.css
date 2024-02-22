@@ -1,21 +1,38 @@
 .cityContainer {
-    position: relative;
-
+  position: relative;
 }
 
-.list {    
-    position: absolute;
-    top: 30px;
-    background-color: white;
-    list-style-type: none;
+.list {
+  position: absolute;
+  top: 30px;
+  background-color: var(--bg-white);
+  list-style-type: none;
+  width: 100%;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.button:hover {
+  color: var(--color-blue);
+}
+
+.secondaryCityValues {
+  font-size: 10px;
+  font-style: italic;
 }
 
 .inputSelector {
-    display: flex;
-    /* flex-direction: column; */
-    width: 360px;
-    margin: 0;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  display: flex;
+  width: 360px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 4px;
 }

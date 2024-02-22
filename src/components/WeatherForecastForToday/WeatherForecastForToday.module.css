@@ -1,0 +1,57 @@
+.weatherContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  gap: 25px;
+  background-color: var(--bg-blue);
+  color: var(--bg-white);
+  position: relative;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.bgIcon1,
+.bgIcon2,
+.bgIcon3,
+.bgIcon4 {
+  position: absolute;
+  width: 150px;
+  opacity: 0.2;
+  height: auto;
+}
+
+.bgIcon1 {
+  top: 64px;
+  right: -2px;
+}
+
+.bgIcon2 {
+  top: 137px;
+  left: -63px;
+}
+
+.bgIcon3 {
+  bottom: 101px;
+  right: -42px;
+}
+
+.bgIcon4 {
+  left: -67px;
+  bottom: -47px;
+}
+
+.weatherListItem {
+  display: flex;
+  font-weight: bold;
+}
+
+.weatherToday {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+}
